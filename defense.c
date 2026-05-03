@@ -638,7 +638,7 @@ void UpdateDefense()
 
                         break;
                     }
-             }
+              }
             }
             zombies[i].state = STATE_WALK;
         }
@@ -1072,4 +1072,81 @@ bool IsDefenseFinished()
 {
     return waveFinished;
 }
+
+// ================= SAVE SYSTEM GETTERS =================
+
+int GetPlayerHP() {
+    return playerHP;
+}
+
+int GetMaxHP() {
+    return maxHP;
+}
+
+int GetAmmo() {
+    return ammo;
+}
+
+int GetMaxAmmo() {
+    return maxAmmo;
+}
+
+int GetGold() {
+    return gold;
+}
+
+int GetHPLevel() {
+    return hpLevel;
+}
+
+int GetAmmoLevel() {
+    return ammoLevel;
+}
+
+int GetDmgLevel() {
+    return dmgLevel;
+}
+
+int GetReloadLevel() {
+    return reloadLevel;
+}
+
+int GetSpeedLevel() {
+    return speedLevel;
+}
+
+float GetBulletDamage() {
+    return bulletDamage;
+}
+
+float GetReloadSpeed() {
+    return reloadSpeed;
+}
+
+float GetMoveSpeed() {
+    return moveSpeed;
+}
+
+int GetWeaponType() {
+    return 0;
+}
+
+void LoadGameFromSave(int hp, int maxhp, int ammo_val, int maxammo_val, int gold_val, int hplvl, int ammolvl, int dmglvl, int reloadlvl, int speedlvl, float bulletdmg, float reloadspd, float movespd, int wpntype)
+{
+    playerHP = hp;
+    maxHP = maxhp;
+    ammo = ammo_val;
+    maxAmmo = maxammo_val;
+    gold = gold_val;
+    hpLevel = hplvl;
+    ammoLevel = ammolvl;
+    dmgLevel = dmglvl;
+    reloadLevel = reloadlvl;
+    speedLevel = speedlvl;
+    bulletDamage = bulletdmg;
+    reloadSpeed = reloadspd;
+    moveSpeed = movespd;
+    shootDelay = (0.3f / reloadSpeed);
+}
+
 //Code Created by 林义信
