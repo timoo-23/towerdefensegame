@@ -3,6 +3,7 @@
 #include "menu.h"
 #include "options.h"
 #include "defense.h"
+#include "save_system.h"
 #include <stdio.h>
 
 typedef enum {
@@ -48,9 +49,40 @@ int main()
             UpdateMenu();
 
             int selection = GetMenuSelection();
-            if (selection == MENU_NEWGAME)
+            if (selection == MENU_CONTINUE)
+            {
+                printf("Loading save game...\n");
+                SaveData saveData;
+                if (LoadGameState("savegame.dat", &saveData))
+                {
+                    printf("Save loaded! Day: %d, Wave: %d\n", saveData.currentDay, saveData.currentWave);
+                    ResetDefense();
+                    LoadGameFromSave(saveData.playerHP, saveData.maxHP, saveData.ammo, saveData.maxAmmo,
+                                   saveData.gold, saveData.hpLevel, saveData.ammoLevel, saveData.dmgLevel,
+                                   saveData.reloadLevel, saveData.speedLevel, saveData.bulletDamage,
+                                   saveData.reloadSpeed, saveData.moveSpeed, saveData.weaponType);
+                    currentDay = saveData.currentDay;
+                    SetCurrentDay(currentDay);
+                    
+                    char filename[50];
+                    sprintf(filename, "script/day%d.txt", currentDay);
+                    LoadScript(filename);
+                    
+                    state = STATE_VN;
+                }
+                else
+                {
+                    printf("Failed to load save game\n");
+                }
+            }
+            else if (selection == MENU_NEWGAME)
             {
                 printf("Starting new game...\n");
+                DeleteSaveFile("savegame.dat");
+                currentDay = 1;
+                SetCurrentDay(currentDay);
+                ResetDefense();
+                LoadScript("script/day1.txt");
                 state = STATE_VN;
             }
             else if (selection == MENU_OPTIONS)
@@ -121,6 +153,29 @@ int main()
 
             else if(IsDefenseFinished())
             {
+                printf("Defense finished, saving progress...\n");
+                
+                // SAVE GAME STATE
+                SaveData saveData = {
+                    .currentDay = currentDay,
+                    .currentWave = GetCurrentWave(),
+                    .playerHP = GetPlayerHP(),
+                    .maxHP = GetMaxHP(),
+                    .ammo = GetAmmo(),
+                    .maxAmmo = GetMaxAmmo(),
+                    .gold = GetGold(),
+                    .hpLevel = GetHPLevel(),
+                    .ammoLevel = GetAmmoLevel(),
+                    .dmgLevel = GetDmgLevel(),
+                    .reloadLevel = GetReloadLevel(),
+                    .speedLevel = GetSpeedLevel(),
+                    .bulletDamage = GetBulletDamage(),
+                    .reloadSpeed = GetReloadSpeed(),
+                    .moveSpeed = GetMoveSpeed(),
+                    .weaponType = GetWeaponType()
+                };
+                SaveGameState("savegame.dat", &saveData);
+                
                 printf("Defense finished, advancing day...\n");
                 currentDay++;
                 SetCurrentDay(currentDay);
@@ -153,6 +208,7 @@ int main()
 
             if(IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
+                DeleteSaveFile("savegame.dat");
                 ResetDefense();
                 state = STATE_MENU;
             }

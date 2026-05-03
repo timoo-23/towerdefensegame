@@ -3,7 +3,7 @@
 
 #include <stdbool.h>
 
-// Game state structure to hold all saveable data
+// Game save data structure
 typedef struct {
     // Progress
     int currentDay;
@@ -18,14 +18,14 @@ typedef struct {
     // Currency
     int gold;
     
-    // Upgrades
+    // Upgrade levels (0-10)
     int hpLevel;
     int ammoLevel;
     int dmgLevel;
     int reloadLevel;
     int speedLevel;
     
-    // Game mechanics
+    // Game mechanics values
     float bulletDamage;
     float reloadSpeed;
     float moveSpeed;
@@ -34,7 +34,7 @@ typedef struct {
     int weaponType;
 } SaveData;
 
-// Save functions
+// Function declarations
 bool SaveGameState(const char* filename, const SaveData* data);
 bool LoadGameState(const char* filename, SaveData* data);
 bool SaveFileExists(const char* filename);
