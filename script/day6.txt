@@ -1,0 +1,38 @@
+Day 6.
+
+Exhaustion is setting in.
+
+...
+
+But you can't stop.
+
+...
+
+"Listen," the radio voice is different now.
+
+Urgent.
+
+...
+
+"We found something."
+
+"A weakness in their biology."
+
+...
+
+"If you hit them right... concentrated fire..."
+
+"You can tear through multiple targets."
+
+...
+
+"But it requires precision."
+
+"And speed."
+
+...
+
+CHOICE 2
+[POWER_SPIKE] "Massive damage output. Go all in."
+[BALANCED] "Stay balanced. You'll need flexibility."
+ENDCHOICE

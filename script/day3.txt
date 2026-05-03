@@ -1,0 +1,100 @@
+It’s getting worse.
+
+...
+
+Not just outside.
+
+Inside.
+
+...
+
+You haven’t slept.
+
+Every sound feels like a threat.
+
+Every shadow feels alive.
+
+...
+
+The radio turns on again—but this time...
+
+it’s different.
+
+...
+
+"You’re still alive?"
+
+A new voice.
+
+Not the same one.
+
+...
+
+"Then listen carefully."
+
+"You're not alone out here."
+
+...
+
+"We tried to fight back."
+
+"We failed."
+
+...
+
+A loud crash echoes in the distance.
+
+Gunfire.
+
+Then silence.
+
+...
+
+"They're everywhere now."
+
+"No escape."
+
+...
+
+Your grip tightens.
+
+Your breathing gets heavier.
+
+...
+
+"You can keep fighting..."
+
+"But it’s going to cost you."
+
+...
+
+"You’re not the same anymore."
+
+"Something’s breaking."
+
+...
+
+"You have to choose what you lose."
+
+...
+
+CHOICE 2
+[LOSE_DAMAGE] "You're exhausted. Your attacks feel weaker."
+[LOSE_SPEED] "You're slowing down. Your body can't keep up."
+ENDCHOICE
+
+...
+
+The radio cuts off.
+
+...
+
+No guidance.
+
+No help.
+
+...
+
+Just you.
+
+And whatever is left of your will to survive.

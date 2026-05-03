@@ -1,0 +1,42 @@
+Four days in.
+
+You've seen what they can do.
+
+What they've become.
+
+...
+
+The mutations aren't random anymore.
+
+They're... organized.
+
+...
+
+You spot something new on the horizon.
+
+Larger silhouettes.
+
+Slower... but heavier.
+
+...
+
+The radio crackles.
+
+"We've been calling them Tanks."
+
+"They barely move, but they're walking walls of meat and bone."
+
+...
+
+"They won't kill you fast."
+
+"But they won't die fast either."
+
+...
+
+"You need to pick your strategy."
+
+CHOICE 2
+[FOCUS_FIRE] "Bring them down fast. You'll focus on higher damage."
+[SURVIVE_LONGER] "Outlast them. You'll need more health."
+ENDCHOICE

@@ -1,0 +1,28 @@
+The hordes are getting worse.
+
+...
+
+"You're doing better than expected," the voice on the radio says.
+
+"But they're adapting faster."
+
+...
+
+"The ranged types are multiplying."
+
+"Their toxins... they're evolving too."
+
+...
+
+"Your only advantage is preparation."
+
+...
+
+"Every upgrade matters now."
+
+...
+
+CHOICE 2
+[RELOAD_BOOST] "Get your reload faster. You'll need constant fire."
+[AMMO_BOOST] "More ammunition. Spray and pray."
+ENDCHOICE

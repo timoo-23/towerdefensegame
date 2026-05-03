@@ -1,0 +1,55 @@
+One week.
+
+...
+
+You've survived a week of this.
+
+...
+
+The city is a graveyard now.
+
+Nothing moves except them.
+
+...
+
+"You're one of the last ones left," the voice says.
+
+"Maybe the only one."
+
+...
+
+"But we found something."
+
+"Weapons. Military grade."
+
+...
+
+"Three options."
+
+"Each one works differently."
+
+...
+
+"The Minigun: Fast fire. Never stop shooting."
+
+"The AK-47: Balanced. Reliable. Classic."
+
+"The Sniper: Powerful. One shot, one kill. But slow."
+
+...
+
+"Choose wisely."
+
+"This is your final upgrade."
+
+...
+
+"After this wave... we lose contact."
+
+"You're on your own."
+
+CHOICE 3
+[MINIGUN] "The Minigun. Constant fire. Never run dry."
+[AK47] "The AK-47. Balanced firepower and speed."
+[SNIPER] "The Sniper. Power over everything else."
+ENDCHOICE

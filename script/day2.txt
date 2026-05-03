@@ -1,0 +1,76 @@
+The next day feels colder.
+
+Or maybe it's just you.
+
+...
+
+The zombies... they're changing.
+
+Some of them don’t just walk anymore.
+
+They stop.
+
+They stare.
+
+And then—
+
+They spit.
+
+...
+
+You barely dodge as something hits the ground beside you.
+
+It sizzles.
+
+Poison.
+
+...
+
+The radio comes back.
+
+"So you've seen them too..."
+
+"Ranged types."
+
+"They’re mutations."
+
+...
+
+"The infection is evolving."
+
+"Some bodies couldn’t handle it."
+
+"But others..."
+
+"They adapted."
+
+...
+
+"Their saliva is toxic now."
+
+"They attack from a distance."
+
+"They won’t rush you like the others."
+
+...
+
+"Which means you’ll need to adapt too."
+
+...
+
+"You’ve got two options."
+
+CHOICE 2
+[DAMAGE] "Power over safety. Deal more damage."
+[HEALTH] "Endurance over power. Get more health."
+ENDCHOICE
+
+The radio goes silent again.
+
+...
+
+You look at your hands.
+
+This choice...
+
+might decide how long you last.
