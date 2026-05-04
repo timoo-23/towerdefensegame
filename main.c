@@ -4,6 +4,7 @@
 #include "options.h"
 #include "defense.h"
 #include "save_system.h"
+#include "pause.h"
 #include <stdio.h>
 
 typedef enum {
@@ -25,6 +26,7 @@ int main()
     InitAudioDevice();
     LoadBackground("assets/Postapocalypce1/Bright/postapocalypse1.png");
     InitDefense();
+    InitPause();  // <-- ADD THIS LINE HERE (line 27)
     Music bgm = LoadMusicStream("assets/bgm.ogg");
     PlayMusicStream(bgm);
     InitOptions(&bgm);
@@ -42,6 +44,34 @@ int main()
     while (!WindowShouldClose())
     {
         //  UPDATE STATE
+        
+        // Check for pause toggle (ESC key) during defense
+        if (state == STATE_DEFENSE && IsKeyPressed(KEY_ESCAPE))
+        {
+            TogglePause();
+        }
+        
+        // Update pause menu
+        UpdatePause();
+        
+        // Handle pause menu selections
+        int pauseSelection = GetPauseSelection();
+        if (pauseSelection == PAUSE_RESUME)
+        {
+            TogglePause();
+        }
+        else if (pauseSelection == PAUSE_OPTIONS)
+        {
+            state = STATE_OPTIONS;
+            TogglePause();
+        }
+        else if (pauseSelection == PAUSE_MENU)
+        {
+            printf("Returning to main menu...\n");
+            ResetAfterDeath();
+            state = STATE_MENU;
+            TogglePause();
+        }
 
         if (state == STATE_MENU)
         {
@@ -114,7 +144,11 @@ int main()
         else if(state == STATE_DEFENSE)
         {
             printf("STATE: DEFENSE\n");
-            UpdateDefense();
+            // Only update defense if not paused
+            if (!IsPaused())
+            {
+                UpdateDefense();
+            }
 
             if(IsGameWon())
             {
@@ -261,6 +295,8 @@ int main()
                     DrawText("Main Menu", w/2 - 90, h/2 + 60, 30, menuColor);
                 }
             }
+            // Draw pause menu overlay
+            DrawPause(scaleX, scaleY);
         }
         else if(state == STATE_BRIEFING)
         {
